@@ -3,12 +3,14 @@ name: release
 # Release NautilusTrader on successful completion of the `build` workflow
 
 on:
-  workflow_run:
-    workflows:
-      - build
-    # branches: [ubuntu-20.04]
-    types:
-      - completed
+  push:
+    branches: [ubuntu-20.04]
+  # workflow_run:
+  #   workflows:
+  #     - build
+  #   # branches: [ubuntu-20.04]
+  #   types:
+  #     - completed
 
 jobs:
   test-pip-install:
